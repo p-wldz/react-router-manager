@@ -15,9 +15,9 @@ export default class App extends Component {
 
                 <h1>Training with React-Router</h1>
                 <Router>
-
                     <div className="container">
                         <Menu />
+
                         {Object.keys(Routes).map((route) => (
                             <Route key={route} {...Routes[route]} />
                         ))}

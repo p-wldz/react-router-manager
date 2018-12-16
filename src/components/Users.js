@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Users = () => {
+const Users = (props) => {
     return (
         <div className="container">
-            <h1>Users!</h1>
+            <h1>User!</h1>
+            <p>User ID: {props.match.params.id}</p>
         </div>
     );
 }

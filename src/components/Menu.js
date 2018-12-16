@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CreateLink from '../routes/createLinkHelper';
+import { RouteLink } from '../routes/routerHelper';
 import RouterNames from "../routes/names";
 
 const Menu = () => {
@@ -9,10 +8,16 @@ const Menu = () => {
             <nav className="navbar">
                 <ul className="navbar-nav mr-auto">
                     <li>
-                        <CreateLink name={RouterNames.HOME} />
+                        <RouteLink name={RouterNames.HOME}> </RouteLink>
                     </li>
                     <li>
-                        <CreateLink name={RouterNames.CONTACT} />
+                        <RouteLink name={RouterNames.CONTACT}> </RouteLink>
+                    </li>
+                    <li>
+                        <RouteLink name={RouterNames.USERS} params={{ id: 5, name: "p-wldz" }}> </RouteLink>
+                    </li>
+                    <li>
+                        <RouteLink name={RouterNames.REDIRECT}> </RouteLink>
                     </li>
                 </ul>
             </nav>
