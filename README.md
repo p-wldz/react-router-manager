@@ -2,10 +2,10 @@
 # react-router-manager
 Using React Router and creating helpers, for using named routers. Creating links etc.
 
-## Problem with router which may you have
+## Problem with router which you may have
 Always the layout for URL is a problem, if router are like
 - /customers
-- /cutomers/55
+- /customers/55
 
 this is not exactly a problem, problem comes when you need to generate more complicated route like:
 - /customers/55/manage/projects
