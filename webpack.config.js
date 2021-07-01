@@ -1,31 +1,32 @@
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
-  entry: ['./src/index.js'],
-  output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'stage-1']
-        }
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    historyApiFallback: true,
-      port: 81,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  }
-};
+  // Where files should be sent once they are bundled
+ output: {
+   path: path.join(__dirname, '/dist'),
+   filename: 'index.bundle.js'
+ },
+  // webpack 5 comes with devServer which loads in development mode
+ devServer: {
+   port: 3000,
+   watchContentBase: true
+ },
+  // Rules of how webpack will take our files, complie & bundle them for the browser 
+ module: {
+   rules: [
+     {
+       test: /\.(js|jsx)$/,
+       exclude: /nodeModules/,
+       use: {
+         loader: 'babel-loader'
+       }
+     },
+     {
+       test: /\.css$/,
+       use: ['style-loader', 'css-loader']
+     }
+   ]
+ },
+ plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+}

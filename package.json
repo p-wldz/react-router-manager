@@ -1,31 +1,36 @@
 {
-  "name": "redux-simple-starter",
+  "name": "react-router-manager",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Using React Router and creating helpers, for using named routers. Creating links etc. ",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "git@github.com/p-wldz/react-router-manager.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch",
-    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
+    "start": "webpack serve --mode development"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
     "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
+    "babel-loader": "^8.2.2",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.21",
     "path-to-regexp": "^2.4.0",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "4.0.0"
