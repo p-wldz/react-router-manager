@@ -19,42 +19,44 @@ Always when developer needs to create URL like that, he needs to know pattern:
 how about such a declaration? 
 
  ```javascript
-<RouteLink name={RouterNames.USERS} params={{ id: customer.id, action: "manage", object: objectToManage }}> </RouteLink>
+<RouteLink name={RouterNames.CUSTOMER} params={{ id: customer.id, action: "manage", object: objectToManage }}> </RouteLink>
 ```
 
 
 ## Usage
 ### Creating list of routes
-
-    const routes = {  
-        [RouteNames.HOME]: {  
-            component: Home,  
-            name: "Home",  
-            path: '/',  
-            exact: true  
-      },  
-      [RouteNames.CONTACT]: {  
-            component: Contact,  
-            name: "Contact",  
-            path: '/contact'  
-      },  
-      [RouteNames.USERS]: {  
-            component: Users,  
-            name: "Specific user",  
-            path: '/users/:id/:name'  
-      },  
-      [RouteNames.REDIRECT]: {  
-            component: RedirectTo,  
-            name: "Redirect to contact",  
-            path: '/redirect'  
-      }  
-    };
+ ```javascript
+const routes = {  
+    [RouteNames.HOME]: {  
+        component: Home,  
+        name: "Home",  
+        path: '/',  
+        exact: true  
+    },  
+    [RouteNames.CONTACT]: {  
+        component: Contact,  
+        name: "Contact",  
+        path: '/contact'  
+    },  
+    [RouteNames.USERS]: {  
+        component: Users,  
+        name: "Specific user",  
+        path: '/users/:id/:name'  
+    },  
+    [RouteNames.REDIRECT]: {  
+        component: RedirectTo,  
+        name: "Redirect to contact",  
+        path: '/redirect'  
+    }  
+};
+```
 
 ### Generating list of Routes
-
-    {Object.keys(Routes).map((route) => (  
-        <Route key={route} {...Routes[route]} />  
-    ))}
+ ```javascript
+{Object.keys(Routes).map((route) => (  
+    <Route key={route} {...Routes[route]} />  
+))}
+```
 
 ### Creating link in navigation
 We have to specify only the name of route
